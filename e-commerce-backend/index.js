@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, "../e-commerce-frontend/build")));
 
 app.get("*", (req, res) => {
-	res.sendFile(path.join(__dirname, "e-commerce-frontend", "build", "index.html"));
+	res.sendFile(path.join(__dirname, "../e-commerce-frontend", "build", "index.html"));
 });
 // const Port = process.env.PORT;
 const port=process.env.PORT || 3000;
