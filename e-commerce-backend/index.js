@@ -8,11 +8,12 @@ const path = require("path");
 const cors = require("cors");
 app.use(express.json());
 app.use(cors());
-const __dirname = path.resolve();
-app.use(express.static(path.join(__dirname, "/e-commerce-frontend/dist")));
+
+// console.log(dirname);
+app.use(express.static(path.join(__dirname, "../e-commerce-frontend/build")));
 
 app.get("*", (req, res) => {
-	res.sendFile(path.join(__dirname, "e-commerce-frontend", "dist", "index.html"));
+	res.sendFile(path.join(__dirname, "e-commerce-frontend", "build", "index.html"));
 });
 // const Port = process.env.PORT;
 const port=process.env.PORT || 3000;
